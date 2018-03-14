@@ -1,5 +1,6 @@
 package com.rafal.microservices.netflixzuulapigatewayserver;
 
+import brave.sampler.Sampler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -16,7 +17,7 @@ public class NetflixZuulApiGatewayServerApplication {
 	}
 
 	@Bean
-	public AlwaysSampler defaultSampler(){
-		return new AlwaysSampler();
+	public Sampler defaultSampler() {
+		return Sampler.ALWAYS_SAMPLE;
 	}
 }

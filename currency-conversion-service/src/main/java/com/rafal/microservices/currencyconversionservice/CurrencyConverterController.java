@@ -1,5 +1,7 @@
 package com.rafal.microservices.currencyconversionservice;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +17,7 @@ import java.util.Map;
 public class CurrencyConverterController {
 
     private CurrencyExchangeServiceProxy proxy;
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     public CurrencyConverterController(CurrencyExchangeServiceProxy proxy) {
@@ -37,6 +40,7 @@ public class CurrencyConverterController {
     public CurrencyConversionDto convertCurrencyFeign(@PathVariable String from, @PathVariable String to, @PathVariable BigDecimal quantity) {
 
         CurrencyConversionDto response = proxy.retreiveExchangeValue(from,to);
+        logger.info("{}", response);
 
         return new CurrencyConversionDto(response.getId(), from, to, response.getConversionMultiple(), quantity, quantity.multiply(response.getConversionMultiple()), response.getPort());
     }
