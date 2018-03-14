@@ -22,6 +22,7 @@
       <module name="netflix-zuul-api-gateway-server" target="1.8" />
       <module name="spring-cloud-config-server" target="1.8" />
       <module name="test" target="1.5" />
+      <module name="zipkin-distribiuted-tracing-server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
