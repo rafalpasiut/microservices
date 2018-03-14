@@ -9,6 +9,7 @@
         <module name="currency-conversion-service" />
         <module name="currency-exchange-service" />
         <module name="limits-service" />
+        <module name="netflix-eureka-naming-server" />
         <module name="spring-cloud-config-server" />
       </profile>
     </annotationProcessing>
@@ -16,6 +17,7 @@
       <module name="currency-conversion-service" target="1.8" />
       <module name="currency-exchange-service" target="1.8" />
       <module name="limits-service" target="1.8" />
+      <module name="netflix-eureka-naming-server" target="1.8" />
       <module name="spring-cloud-config-server" target="1.8" />
       <module name="test" target="1.5" />
     </bytecodeTargetLevel>
